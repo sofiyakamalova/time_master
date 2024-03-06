@@ -12,8 +12,10 @@ class Navigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoTabsRouter(
       routes: const [
-        HomeRoute(),
+        PlannerRoute(),
         HabitsRoute(),
+        PrioritiesRoute(),
+        SettingsRoute(),
       ],
       builder: (context, child) {
         final tabsRouter = AutoTabsRouter.of(context);
@@ -39,6 +41,22 @@ class Navigation extends StatelessWidget {
                   width: 25,
                 ),
                 title: const Text("Habits"),
+                selectedColor: AppColors.primary_color,
+              ),
+              SalomonBottomBarItem(
+                icon: Image.asset(
+                  'assets/icons/priority_bar.png',
+                  width: 25,
+                ),
+                title: const Text("Priorities"),
+                selectedColor: AppColors.primary_color,
+              ),
+              SalomonBottomBarItem(
+                icon: Image.asset(
+                  'assets/icons/settings_bar.png',
+                  width: 25,
+                ),
+                title: const Text("Settings"),
                 selectedColor: AppColors.primary_color,
               ),
             ],
