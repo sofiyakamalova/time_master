@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:time_master/src/core/constants/app_colors.dart';
-import 'package:time_master/src/feautures/planner/tab_bar_screens/day/day_screen.dart';
-import 'package:time_master/src/feautures/planner/tab_bar_screens/month/month_screen.dart';
-import 'package:time_master/src/feautures/planner/tab_bar_screens/week/week_screen.dart';
+import 'package:time_master/src/features/planner/tab_bar_screens/day/day_screen.dart';
+import 'package:time_master/src/features/planner/tab_bar_screens/month/month_screen.dart';
+import 'package:time_master/src/features/planner/tab_bar_screens/week/week_screen.dart';
 
 class TabBarWidget extends StatefulWidget {
   const TabBarWidget({super.key});
@@ -42,7 +42,6 @@ class _TabBarWidgetState extends State<TabBarWidget>
                   controller: tabController,
                   physics: const ClampingScrollPhysics(),
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
-                  unselectedLabelColor: AppColors.fill_color,
                   isScrollable: true,
                   indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(30.0),
@@ -55,6 +54,9 @@ class _TabBarWidgetState extends State<TabBarWidget>
                         height: 50,
                         width: 80,
                         decoration: BoxDecoration(
+                          color: selectedIndex == 0
+                              ? AppColors.primary_color
+                              : AppColors.fill_color,
                           borderRadius: BorderRadius.circular(30.0),
                           border: Border.all(
                               color: AppColors.primary_color, width: 1.5),
@@ -77,6 +79,9 @@ class _TabBarWidgetState extends State<TabBarWidget>
                         height: 50,
                         width: 80,
                         decoration: BoxDecoration(
+                          color: selectedIndex == 1
+                              ? AppColors.primary_color
+                              : AppColors.fill_color,
                           borderRadius: BorderRadius.circular(30.0),
                           border: Border.all(
                               color: AppColors.primary_color, width: 1.5),
@@ -99,6 +104,9 @@ class _TabBarWidgetState extends State<TabBarWidget>
                         height: 50,
                         width: 80,
                         decoration: BoxDecoration(
+                          color: selectedIndex == 2
+                              ? AppColors.primary_color
+                              : AppColors.fill_color,
                           borderRadius: BorderRadius.circular(30.0),
                           border: Border.all(
                               color: AppColors.primary_color, width: 1.5),
