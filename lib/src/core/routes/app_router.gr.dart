@@ -9,16 +9,11 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i10;
-import 'package:flutter/material.dart' as _i11;
 import 'package:time_master/src/core/routes/navigation.dart' as _i5;
 import 'package:time_master/src/features/habbits/habits_page.dart' as _i3;
-import 'package:time_master/src/features/planner/model/event_model.dart'
-    as _i12;
 import 'package:time_master/src/features/planner/planner_page.dart' as _i6;
 import 'package:time_master/src/features/planner/tab_bar_screens/day/day_screen.dart'
     as _i1;
-import 'package:time_master/src/features/planner/tab_bar_screens/event_editing_page.dart'
-    as _i2;
 import 'package:time_master/src/features/planner/tab_bar_screens/month/month_screen.dart'
     as _i4;
 import 'package:time_master/src/features/planner/tab_bar_screens/week/week_screen.dart'
@@ -36,17 +31,6 @@ abstract class $AppRouter extends _i10.RootStackRouter {
       return _i10.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.DayScreen(),
-      );
-    },
-    EventEditingRoute.name: (routeData) {
-      final args = routeData.argsAs<EventEditingRouteArgs>(
-          orElse: () => const EventEditingRouteArgs());
-      return _i10.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i2.EventEditingPage(
-          key: args.key,
-          event: args.event,
-        ),
       );
     },
     HabitsRoute.name: (routeData) {
@@ -106,44 +90,6 @@ class DayRoute extends _i10.PageRouteInfo<void> {
   static const String name = 'DayRoute';
 
   static const _i10.PageInfo<void> page = _i10.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i2.EventEditingPage]
-class EventEditingRoute extends _i10.PageRouteInfo<EventEditingRouteArgs> {
-  EventEditingRoute({
-    _i11.Key? key,
-    _i12.EventModel? event,
-    List<_i10.PageRouteInfo>? children,
-  }) : super(
-          EventEditingRoute.name,
-          args: EventEditingRouteArgs(
-            key: key,
-            event: event,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'EventEditingRoute';
-
-  static const _i10.PageInfo<EventEditingRouteArgs> page =
-      _i10.PageInfo<EventEditingRouteArgs>(name);
-}
-
-class EventEditingRouteArgs {
-  const EventEditingRouteArgs({
-    this.key,
-    this.event,
-  });
-
-  final _i11.Key? key;
-
-  final _i12.EventModel? event;
-
-  @override
-  String toString() {
-    return 'EventEditingRouteArgs{key: $key, event: $event}';
-  }
 }
 
 /// generated route for
